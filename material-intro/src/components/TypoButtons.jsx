@@ -1,4 +1,7 @@
-import { Button, Container, Typography } from "@mui/material";
+import { Box, Button, Container, Typography } from "@mui/material";
+import DeleteIcon from "@mui/icons-material/Delete";
+import SendIcon from "@mui/icons-material/Send";
+
 const TypoButtons = () => {
   return (
     <div>
@@ -36,12 +39,24 @@ const TypoButtons = () => {
       </Container>
 
       <Container maxWidth="md">
-        <Button variant="contained" color="secondary">
-          CLICK
-        </Button>
-        <Button variant="outlined" color="success">
-          SEND
-        </Button>
+        <Box sx={{
+          display:'flex',
+          flexDirection:'column',
+          // justifyContent:'center',
+          // alignItems:'center',
+          gap:2,
+          mt: 4
+        }}>
+          <Button variant="contained" color="secondary">
+            CLICK
+          </Button>
+          <Button variant="outlined" color="success" startIcon={<SendIcon/>}>
+            SEND
+          </Button>
+          <Button variant="outlined" color="error" endIcon={<DeleteIcon/>}>
+            DELETE
+          </Button>
+        </Box>
       </Container>
     </div>
   );
